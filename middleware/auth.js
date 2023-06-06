@@ -5,7 +5,7 @@ const { JWT_SECRET } = process.env
 
 module.exports = function (req, res, next) {
   // Get token from header
-  const token = req.header('Authorization');
+  const token = req.header('Authorization').replace("Bearer ", "");
 
   // Check if not token
   if (!token) {
